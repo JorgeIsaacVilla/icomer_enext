@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
-  <title>Tienda Online</title>
+  <title>Tienda Enext</title>
 </head>
 <body>
   <nav>
@@ -21,7 +28,7 @@
 
       <ul>
         <li>
-          <a href="/" id="bodos">Todos</a>
+          <a href="./index.html" id="bodos">Todos</a>
         </li>
         <li>
           <a id="bicicletas">Bicicletas</a>
@@ -40,8 +47,17 @@
         </li>
       </ul>
     </div>
-
+    
     <div class="navbar-right">
+
+      <div class="buscar">
+        <input type="text" placeholder="Buscar" required />
+  
+        <div class="btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
       <ul>
         <li class="navbar-email">correoDecliente@gmail.com</li>
         <li class="navbar-shopping-cart">
@@ -70,10 +86,10 @@
     <div class="mobile-menu inactive">
       <ul>
         <li>
-          <a href="/">CATEGORIES</a>
+          <h3>CATEGORIES</h3>
         </li>
         <li>
-          <a href="/" id="todos-mobile">Todos</a>
+          <a href="index.html" id="todos-mobile">Todos</a>
         </li>
         <li>
           <a id="bicicletas-mobile">Bicicletas</a>
@@ -103,7 +119,7 @@
   
       <ul>
         <li>
-          <a href="/" class="email">platzi@example.com</a>
+          <a href="/" class="email">correoDecliente@gmail.com</a>
         </li>
         <li>
           <a href="/" class="sign-out">Sign out</a>
@@ -112,7 +128,7 @@
     </div>
   </nav>
 
-  <aside id="shoppingCartContainer" class="inactive">
+  <aside id="shoppingCartContainer" class="inactive"> <!-- programar scroll interno-->
     <div class="title-container">
       <p class="title">Mi pedido</p>
     </div>
@@ -144,7 +160,7 @@
       </div>
 
       <button class="primary-button">
-        Checkout
+        realizar compra
       </button>
     </div>
   </div>

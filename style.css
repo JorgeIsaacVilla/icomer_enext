@@ -14,15 +14,62 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 24px;
   border-bottom: 1px solid var(--very-light-pink);
-  background: linear-gradient(315deg, rgba(255,255,255,1) 28%, rgba(255,0,0,1) 28%, rgba(255,0,0,1) 45%, rgba(255,255,255,1) 45%);  
+
+  background-color: var(--white);
+  width: 100%;
+  position: fixed;
 }
 .menu {
   display: none;
 }
 .logo {
   width: 100px;
+}
+
+.buscar {
+  position: relative;
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.buscar input {
+  width: 0;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 18px;
+  color: #222;
+  outline: none;
+  border: 1px solid silver;
+  border-radius: 30px;
+  transition: all 0.6s ease;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 6px;
+  right: 6px;
+  position: absolute;
+  background: var(--black);
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.buscar:hover input {
+  width: 240px;
+}
+
+.buscar input:focus {
+  width: 240px;
+}
+.navbar-right{
+  display: flex;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -35,6 +82,7 @@ nav {
 }
 .navbar-left {
   display: flex;
+  margin-left: 15px;
 }
 .navbar-left ul {
   margin-left: 12px;
@@ -62,6 +110,7 @@ nav {
 }
 .navbar-shopping-cart {
   position: relative;
+  margin-right: 15px;
 }
 .navbar-shopping-cart div {
   width: 16px;
@@ -82,19 +131,18 @@ nav {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
 
-
   }
   .desktop-menu {
     width: 100px;
     height: auto;
-    border: 1px solid var(--very-light-pink);
-    border-radius: 6px;
+    border: 1px solid var(--black);
     padding: 20px 20px 0 20px;
 
-    top: 60.3px;
+    top: 60px;
     right: 60px;
     position: absolute;
     background: var(--white);
+    
   }
   .desktop-menu ul {
     list-style: none;
@@ -128,6 +176,7 @@ nav {
     padding: 24px;
     left: 0;
     width: 100%;
+    height: 100vh;
     position: absolute;
     top: 60px;
   }
@@ -139,8 +188,8 @@ nav {
   }
   .mobile-menu ul {
     padding: 0;
-    margin: 24px 0 0;
     list-style: none;
+    width: 88%;
   }
   .mobile-menu ul:nth-child(1) {
     border-bottom: 1px solid var(--very-light-pink);
@@ -182,6 +231,12 @@ nav {
 .product-detail-close:hover {
   cursor: pointer;
 }
+
+/*modificar esto (inicio)*/
+#productDetail{
+  position: fixed;
+}
+/*modificar esto (fin)*/
 #productDetail > img:nth-child(2) {
   width: 100%;
   height: 360px;
@@ -210,7 +265,7 @@ nav {
   margin-bottom: 36px;
 }
 .primary-button {
-  border-radius: 8px;
+  background-color: var(--black);
   border: none;
   color: var(--white);
   width: 100%;
@@ -228,6 +283,7 @@ nav {
 
   .title-container {
     display: flex;
+    
   }
   .title-container img {
     transform: rotate(180deg);
@@ -282,29 +338,22 @@ nav {
     font-size: var(--md);
     font-weight: bold;
   }
-  .primary-button {
-    background-color: var(--hospital-green);
-    border-radius: 8px;
-    border: none;
-    color: var(--white);
-    width: 100%;
-    cursor: pointer;
-    font-size: var(--md);
-    font-weight: bold;
-    height: 50px;
-  }
+
 
 #shoppingCartContainer{
+  width: 100%;
+  height: 50vh;
   padding: 25px;
-  border-radius: 15px;
-  background: rgb(85, 84, 84);
+  border: solid 1px;
+  position: fixed;
+  top: 60px;
 }
   .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-    margin-top: 20px;
+    padding-top: 80px;
   }
   .product-card {
     width: 240px;
@@ -344,6 +393,7 @@ nav {
 @media (max-width: 640px) {
   .menu {
     display: block;
+    margin-left: 15px;
   }
   .navbar-left ul {
     display: none;
@@ -367,10 +417,21 @@ nav {
     width: 140px;
     height: 140px;
   }
+
+  .buscar:hover input {
+    width: 100px;
+  }
+ 
 }
 
 @media (min-width: 641px){
 .mobile-menu{
 display: none;
 }
+
+
+#shoppingCartContainer{
+  width: 50vh;
+}
+
 }
