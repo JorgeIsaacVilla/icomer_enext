@@ -72,31 +72,25 @@ function toggleCarritoAside () {
     shoppingCartContainer.classList.toggle("inactive");
 }
 
-function openProductDetailAside () {
+function openProductDetailAside () {// ya saque el id, solo falta que el elemento se imprima en la seccion con los valores correspondientes.
 
 
     shoppingCartContainer.classList.add("inactive")
     productDetailContainer.classList.remove("inactive");
 
 
+    const productCards = document.querySelectorAll(".product-card");
+    productCards.forEach(card => {
+        card.addEventListener("click", () => {
+          const productId = card.getAttribute("data-product-id");
+          openProductDetailAside(productId);
+        });
+      });
+      
+      function openProductDetailAside(productId) {
+        console.log("ID del producto:", productId); // obtengo el ID del producto
+      }
 
-    const productId = 1;
-    const filteredProducts = productList.filter(product => product.id === productId);
-    console.log("El producto encontrado:", filteredProducts[0]);
-
-    //const productCard = document.querySelectorAll(".product-card"); //aca leo el producto 
-    //const productId =  productCard.dataset.id; // estoy intentando sacar el ID del producto
-
-   // Buscar el producto correspondiente en productList utilizando el ID
-  //const product = productList.find(product => product.id === parseInt(productId, 10));
-
-    //console.log("El número de ID es:", product);
-
-
-    /*const filteredProducts = productList.filter(product => product.type === "ejercicio");*/
-    /*console.log(productList[0])
-    cardsContainer.innerHTML=""
-    renderProducts(filteredProducts);*/
 }
 
 
@@ -393,7 +387,7 @@ function renderProducts(arr){
 
     for (product of arr) {
         /*
-        div class="product-card">
+        div class="product-card" data-product-id="1">
         <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=">
         <div class="product-info">
           <div>
@@ -408,6 +402,9 @@ function renderProducts(arr){
         */
       const productCard =  document.createElement("div"); /*para crear un div con la clase product-card */
       productCard.classList.add("product-card"); /*esta liena es para agregarle la class="product-card creada en la anterior linea" */
+      productCard.setAttribute("data-product-id", product.id);/*Asignar el atributo data-product-id al elemento */
+
+      
 
       const productImg = document.createElement("img");
       productImg.setAttribute("src", product.image);
