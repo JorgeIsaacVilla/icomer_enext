@@ -75,7 +75,7 @@ function toggleCarritoAside () {
 function openProductDetailAside () {// ya saque el id, solo falta que el elemento se imprima en la seccion con los valores correspondientes.
 
 
-    shoppingCartContainer.classList.add("inactive")
+    shoppingCartContainer.classList.add("inactive");
     productDetailContainer.classList.remove("inactive");
 
 
